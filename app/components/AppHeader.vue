@@ -1,30 +1,49 @@
 <script setup lang="ts">
-const currentSection = ref<string>()
+const nuxtApp = useNuxtApp()
 
+const activeSection = ref<string>()
+
+// Observe/update active section when scrolling
+nuxtApp.hooks.hookOnce('page:loading:end', () => {
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.find(e => e.isIntersecting)
+    if (visible) {
+      activeSection.value = visible.target.id
+    }
+    else if (entries.every(e => !e.isIntersecting)) {
+      activeSection.value = undefined
+    }
+  }, { rootMargin: '-50% 0px -50% 0px' })
+
+  document.querySelectorAll('#about, #experience, #skills, #contact')
+    .forEach(el => observer.observe(el))
+})
+
+// Links for <UNavigationMenu>
 const links = computed(() => [
   {
     label: 'About',
     to: '#about',
     exactHash: true,
-    active: currentSection.value === 'about',
+    active: activeSection.value === 'about',
   },
   {
     label: 'Experience',
     to: '#experience',
     exactHash: true,
-    active: currentSection.value === 'experience',
+    active: activeSection.value === 'experience',
   },
   {
     label: 'Skills',
     to: '#skills',
     exactHash: true,
-    active: currentSection.value === 'skills',
+    active: activeSection.value === 'skills',
   },
   {
     label: 'Contact Me',
     to: '#contact',
     exactHash: true,
-    active: currentSection.value === 'contact',
+    active: activeSection.value === 'contact',
   },
 ])
 </script>

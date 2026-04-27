@@ -9,14 +9,29 @@ useSeoMeta({
 
 <template>
   <div>
-    <UButton>Button</UButton>
-
-    <ContentRenderer
-      v-if="home"
-      :value="home"
-    />
-    <div v-else>
-      Home not found
-    </div>
+    <section
+      id="about"
+      class="h-screen"
+    >
+      About
+    </section>
+    <section
+      id="experience"
+      class="h-screen"
+    >
+      Experience
+    </section>
+    <section
+      id="skills"
+      class="h-screen"
+    >
+      Skills
+    </section>
+    <section
+      id="contact"
+      class="h-screen"
+    >
+      Contact
+    </section>
   </div>
 </template>
