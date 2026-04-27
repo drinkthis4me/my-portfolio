@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxt/content": "^3.13.0",
     "@nuxt/ui": "^4.7.0",
+    "@vueuse/nuxt": "14.2.1",
     "better-sqlite3": "^12.9.0",
     "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.4",
