@@ -2,3 +2,8 @@
 @import '@nuxt/ui';
 
 @source "../../../content/**/*";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px; /* Accommodate AppHeader height */
+}

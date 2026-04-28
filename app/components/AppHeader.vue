@@ -1,22 +1,29 @@
 <script setup lang="ts">
-const nuxtApp = useNuxtApp()
-
 const activeSection = ref<string>()
 
-// Observe/update active section when scrolling
-nuxtApp.hooks.hookOnce('page:loading:end', () => {
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries.find(e => e.isIntersecting)
-    if (visible) {
-      activeSection.value = visible.target.id
-    }
-    else if (entries.every(e => !e.isIntersecting)) {
-      activeSection.value = undefined
-    }
-  }, { rootMargin: '-50% 0px -50% 0px' })
+// Define the section IDs we want to watch
+const sectionIds = ['about', 'experience', 'skills', 'contact']
 
-  document.querySelectorAll('#about, #experience, #skills, #contact')
-    .forEach(el => observer.observe(el))
+// Observe/update active section when scrolling
+onMounted(() => {
+  sectionIds.forEach((id) => {
+    const el = document.getElementById(id)
+    if (!el) return
+
+    useIntersectionObserver(
+      el,
+      (entries) => {
+        const visible = entries.find(e => e.isIntersecting)
+        if (visible) {
+          activeSection.value = id
+        }
+      },
+      {
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0,
+      },
+    )
+  })
 })
 
 // Links for <UNavigationMenu>
@@ -51,14 +58,12 @@ const links = computed(() => [
 <template>
   <UHeader class="border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 bg-white/75 dark:bg-gray-900/75 backdrop-blur">
     <template #title>
-      <NuxtLink
-        to="/"
-        class="font-bold text-xl flex items-center gap-2"
-      >
+      <!-- TODO: customized logo -->
+      <div class="font-bold text-xl flex items-center gap-2">
         <span class="text-primary-500">‹</span>
         Portfolio
         <span class="text-primary-500">/›</span>
-      </NuxtLink>
+      </div>
     </template>
 
     <UNavigationMenu
@@ -68,7 +73,7 @@ const links = computed(() => [
     />
 
     <template #right>
-      <UColorModeButton class="hidden lg:flex">
+      <UColorModeButton class="">
         <template #fallback>
           <UButton
             loading
@@ -80,7 +85,7 @@ const links = computed(() => [
       </UColorModeButton>
 
       <UButton
-        trailing-icon="i-heroicons-arrow-top-right-on-square"
+        trailing-icon="i-lucide-arrow-up-right"
         color="neutral"
         label="Github"
         to="/"
@@ -98,12 +103,11 @@ const links = computed(() => [
 
       <div class="mt-4 flex flex-col gap-4">
         <UButton
-          trailing-icon="i-heroicons-arrow-top-right-on-square"
+          trailing-icon="i-lucide-arrow-up-right"
           color="neutral"
           label="Github"
           to="/"
           target="_blank"
-          class="hidden md:flex"
         />
       </div>
     </template>
