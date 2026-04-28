@@ -1,14 +1,25 @@
 <script setup lang="ts">
-const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first())
+const { data: home } = await useAsyncData('home', () =>
+  queryCollection('index').first(),
+)
+if (!home.value) {
+  throw createError({
+    status: 404,
+    statusText: 'Page not found',
+    fatal: true,
+  })
+}
 
-useSeoMeta({
-  title: home.value?.title,
-  description: home.value?.description,
-})
+// TODO: add content for SEO
+// useSeoMeta({
+//   title: home.value?.title,
+//   description: home.value?.description,
+// })
 </script>
 
 <template>
-  <div>
+  <div v-if="home">
+    <HeroSection :content="home.hero" />
     <section
       id="about"
       class="h-screen"

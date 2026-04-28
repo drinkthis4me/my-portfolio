@@ -1,0 +1,12 @@
+hero: 
+  headline: "Hi. I'm James Wang.\nFrontend Developer."
+  subheadline: I build high-performance web applications that convert. Focused on Clean Code, Scalable State, and UX Engineering.
+  cta_primary: Get In Touch
+  logos:
+    title: My tech
+    items:
+      - i-logos-vue
+      - i-logos-nuxt-icon
+      - i-logos-typescript-icon
+      - i-logos-tailwindcss-icon
+      - i-logos-pinia
