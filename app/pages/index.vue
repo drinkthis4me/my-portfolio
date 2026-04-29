@@ -10,11 +10,10 @@ if (!home.value) {
   })
 }
 
-// TODO: add content for SEO
-// useSeoMeta({
-//   title: home.value?.title,
-//   description: home.value?.description,
-// })
+useSeoMeta({
+  title: home.value?.seo.title,
+  description: home.value?.seo.description,
+})
 </script>
 
 <template>

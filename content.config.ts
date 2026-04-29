@@ -6,6 +6,10 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.yaml',
       schema: z.object({
+        seo: z.object({
+          title: z.string(),
+          description: z.string(),
+        }),
         hero: z.object({
           title: z.string(),
           headline: z.string().optional(),
