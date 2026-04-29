@@ -23,9 +23,11 @@ export default defineContentConfig({
 
         about: z.object({
           title: z.string(),
-          poster_line_1: z.string().optional(),
-          poster_line_2: z.string().optional(),
-          poster_line_3: z.string().optional(),
+          description: z.string(),
+          image: z.object({
+            src: z.string(),
+            alt: z.string(),
+          }),
         }),
       }),
     }),

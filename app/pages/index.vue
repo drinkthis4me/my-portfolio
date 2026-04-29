@@ -19,12 +19,9 @@ useSeoMeta({
 <template>
   <div v-if="home">
     <HeroSection :content="home.hero" />
-    <section
-      id="about"
-      class="h-screen"
-    >
-      About
-    </section>
+
+    <AboutSection :content="home.about" />
+
     <section
       id="experience"
       class="h-screen"

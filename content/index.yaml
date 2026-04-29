@@ -10,6 +10,18 @@ hero:
     items:
       - i-logos-vue
       - i-logos-nuxt-icon
-      - i-logos-typescript-icon
+      - i-logos-typescript-icon`
       - i-logos-tailwindcss-icon
       - i-logos-pinia
+about:
+  title: About Me
+  image: 
+    src: "/images/profile-picture.jpg"
+    alt: Picture of me with a dog
+  description: |
+    Hi! I’m a Frontend Developer based in Taipei, Taiwan. I've immersed myself in the Vue ecosystem since 2023.
+    I’m the person you call when you need to turn a complex Figma file into a snappy, functional Nuxt app that doesn't just look good but actually feels 'right' to use.
+    
+    I’m a big believer in clean code, but I care even more about the person using it. 
+    Whether it's optimizing hydration cycles or just picking the perfect transition, I’m all about those small details that make a digital experience feel premium.
+
