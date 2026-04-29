@@ -33,11 +33,14 @@ defineProps<{
         <div class="relative group max-w-md mx-auto md:mx-0">
           <div class="absolute -inset-4 bg-primary-500/20 rounded-2xl -rotate-3 group-hover:rotate-0 transition-transform duration-500" />
           <div class="relative aspect-3/4 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 shadow-xl">
-            <img
+            <NuxtImg
               :src="content.image.src"
               :alt="content.image.alt"
-              class="w-full h-full object-cover"
-            >
+              format="webp"
+              loading="lazy"
+              placeholder
+              class="w-full h-full"
+            />
           </div>
         </div>
       </div>
