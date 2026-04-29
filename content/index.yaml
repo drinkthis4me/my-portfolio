@@ -10,9 +10,14 @@ hero:
     items:
       - i-logos-vue
       - i-logos-nuxt-icon
-      - i-logos-typescript-icon`
+      - i-logos-typescript-icon
       - i-logos-tailwindcss-icon
       - i-logos-pinia
+      - i-logos-java
+      - i-logos-spring-icon
+      - i-logos-docker-icon
+      - i-logos-postgresql
+      - i-logos-mongodb-icon
 about:
   title: About Me
   image: 

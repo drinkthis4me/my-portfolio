@@ -44,13 +44,18 @@ const heroTitle = computed(() => {
         />
       </div>
 
-      <div class="flex items-center justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-200">
-        <UIcon
-          v-for="logo in props.content?.logos.items"
-          :key="logo"
-          :name="logo"
-          class="w-8 h-8"
-        />
+      <div class="opacity-50 grayscale hover:grayscale-0 transition-all duration-200">
+        <UMarquee
+          pause-on-hover
+          :overlay="false"
+        >
+          <UIcon
+            v-for="logo in props.content?.logos.items"
+            :key="logo"
+            :name="logo"
+            class="w-8 h-8"
+          />
+        </UMarquee>
       </div>
     </UContainer>
   </section>
