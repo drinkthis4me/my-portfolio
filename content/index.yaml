@@ -29,4 +29,37 @@ about:
     
     I’m a big believer in clean code, but I care even more about the person using it. 
     Whether it's optimizing hydration cycles or just picking the perfect transition, I’m all about those small details that make a digital experience feel premium.
+experience:
+  title: Experience
+  items:
+    - position: Frontend Developer
+      company: 
+        name: Global Payments Taiwan
+        url: https://www.globalpayments.com/
+      date: "Sep 2025 - Mar 2026"
+      description: |
+        Led system migration and integration following the acquisition of EftPay.
+      detail: |
+        My role involved implementing a standardized UI component library to maintain brand consistency across the newly integrated fintech products.
 
+        A key achievement was the implementation of a new Multi-Factor Authentication (MFA) security layer. I engineered the authentication flow to balance high-level security compliance with a frictionless user experience, utilizing modern web standards to protect sensitive financial data.  
+    - position: Frontend Developer
+      company: 
+        name: EftPay (Asia) Limited
+        url: https://www.eftpay.com.hk/en/home/
+      date: "Apr 2023 - Aug 2025"
+      description: |
+        Engineered and maintained a robust Enterprise Resource Planning (ERP) system tailored for large-scale payment management.
+      detail: |
+        I specialized in data visualization, building interactive dashboards that transformed complex transaction logs into actionable merchant insights.
+        
+        Additionally, I managed the integration of multiple third-party payment provider APIs, significantly reducing merchant onboarding time.
+    - position: IT Intern  
+      company: 
+        name: Breakthrough Information Co., Ltd
+        url: https://www.twincn.com/item.aspx?no=82821167
+      date: "Apr 2023 - Aug 2025"
+      description: |
+        PC assembling, direct customer support, and hardware maintenance.
+
+        

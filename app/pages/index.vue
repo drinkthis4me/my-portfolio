@@ -22,12 +22,7 @@ useSeoMeta({
 
     <AboutSection :content="home.about" />
 
-    <section
-      id="experience"
-      class="h-screen"
-    >
-      Experience
-    </section>
+    <ExperienceSection :content="home.experience" />
     <section
       id="skills"
       class="h-screen"

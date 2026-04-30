@@ -29,6 +29,20 @@ export default defineContentConfig({
             alt: z.string(),
           }),
         }),
+
+        experience: z.object({
+          title: z.string(),
+          items: z.array(z.object({
+            position: z.string(),
+            company: z.object({
+              name: z.string(),
+              url: z.string(),
+            }),
+            date: z.string(),
+            description: z.string(),
+            detail: z.string().optional(),
+          })),
+        }),
       }),
     }),
   },
