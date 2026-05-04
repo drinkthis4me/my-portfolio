@@ -11,13 +11,27 @@
     </template>
 
     <template #right>
-      <div class="flex items-center gap-1">
-        <span>Built with</span>
-        <UIcon
-          name="i-logos-nuxt-icon"
-          class="w-4 h-4"
-        />
-        <span class="font-semibold text-gray-600 dark:text-gray-300">Nuxt UI</span>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-1">
+          <span>Built with</span>
+          <UIcon
+            name="i-logos-nuxt-icon"
+            class="w-4 h-4"
+          />
+          <span class="font-semibold text-gray-600 dark:text-gray-300">Nuxt UI</span>
+        </div>
+
+        <UButton
+          color="neutral"
+          leading-icon="i-logos-github-icon"
+          to="/"
+          target="_blank"
+          :ui="{
+            leadingIcon: 'rounded-full bg-white',
+          }"
+        >
+          View Source Code
+        </UButton>
       </div>
     </template>
   </UFooter>

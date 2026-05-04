@@ -83,15 +83,6 @@ const links = computed(() => [
           />
         </template>
       </UColorModeButton>
-
-      <UButton
-        trailing-icon="i-lucide-arrow-up-right"
-        color="neutral"
-        label="Github"
-        to="/"
-        target="_blank"
-        class="hidden lg:flex"
-      />
     </template>
 
     <template #body>
