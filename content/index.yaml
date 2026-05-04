@@ -61,5 +61,36 @@ experience:
       date: "Apr 2023 - Aug 2025"
       description: |
         PC assembling, direct customer support, and hardware maintenance.
+skills:
+  title: Skills
+  category:
+  - name: "Frontend & UI"
+    description: "Building reactive, accessible interfaces."
+    items:
+      - { name: "Vue 3", icon: "i-logos-vue" }
+      - { name: "Nuxt 3", icon: "i-logos-nuxt-icon" }
+      - { name: "Tailwind CSS", icon: "i-logos-tailwindcss-icon" }
+      - { name: "Headless UI", icon: "i-logos-headlessui-icon" }
 
+  - name: "Logic & API"
+    description: "Managing data and state flow."
+    items:
+      - { name: "TypeScript", icon: "i-logos-typescript-icon" }
+      - { name: "Pinia", icon: "i-logos-pinia" }
+      - { name: "TanStack Query", icon: "i-lucide-rss" }
+      - { name: "Axios", icon: "i-lucide-rss" }
+  - name: "Backend"
+    description: "Handling data, storage, and containerization."
+    items: 
+      - { name: "Spring Boot", icon: "i-logos-spring-icon" }
+      - { name: "PostgreSQL", icon: "i-logos-postgresql" }
+      - { name: "MongoDB", icon: "i-logos-mongodb-icon" }
+      - { name: "Docker", icon: "i-logos-docker-icon" }
+  - name: "Design & Tools"
+    description: "Design systems and dev workflow."
+    items:
+      - { name: "Figma", icon: "i-logos-figma" }
+      - { name: "Git", icon: "i-logos-git-icon" }
+      - { name: "Vite", icon: "i-logos-vitejs" }
+      - { name: "Vitest", icon: "i-logos-vitest" }
         

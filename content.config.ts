@@ -43,6 +43,18 @@ export default defineContentConfig({
             detail: z.string().optional(),
           })),
         }),
+
+        skills: z.object({
+          title: z.string(),
+          category: z.array(z.object({
+            name: z.string(),
+            description: z.string().optional(),
+            items: z.array(z.object({
+              name: z.string(),
+              icon: z.string(),
+            })),
+          })),
+        }),
       }),
     }),
   },
