@@ -55,6 +55,18 @@ export default defineContentConfig({
             })),
           })),
         }),
+
+        contact: z.object({
+          title: z.string(),
+          headline: z.string(),
+          subheadline: z.string(),
+          email: z.string(),
+          socials: z.array(z.object({
+            name: z.string(),
+            icon: z.string(),
+            url: z.string(),
+          })),
+        }),
       }),
     }),
   },

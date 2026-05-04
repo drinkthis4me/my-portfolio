@@ -93,4 +93,11 @@ skills:
       - { name: "Git", icon: "i-logos-git-icon" }
       - { name: "Vite", icon: "i-logos-vitejs" }
       - { name: "Vitest", icon: "i-logos-vitest" }
-        
+contact:
+  title: "Contact"
+  headline: "Let's get in touch"
+  subheadline: "Currently available for interesting projects."
+  email: "jamesoffice.417@email.com"
+  socials:
+    - { name: "GitHub", icon: "i-logos-github-icon", url: "https://github.com/drinkthis4me" }
+    - { name: "LinkedIn", icon: "i-logos-linkedin-icon", url: "https://linkedin.com/" }      

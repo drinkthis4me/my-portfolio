@@ -25,11 +25,7 @@ useSeoMeta({
     <ExperienceSection :content="home.experience" />
 
     <SkillsSection :content="home.skills" />
-    <section
-      id="contact"
-      class="h-screen"
-    >
-      Contact
-    </section>
+
+    <ContactSection :content="home.contact" />
   </div>
 </template>
