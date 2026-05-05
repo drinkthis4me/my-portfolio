@@ -38,7 +38,7 @@ const heroTitle = computed(() => {
           color="primary"
           :label="props.content?.cta_primary"
           to="#contact"
-          icon="i-heroicons-arrow-right-20-solid"
+          icon="i-lucide-arrow-right"
           trailing
           class="px-8"
         />

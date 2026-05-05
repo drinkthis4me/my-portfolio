@@ -7,5 +7,7 @@
     </UMain>
 
     <AppFooter />
+
+    <AppBackToTopButton />
   </UApp>
 </template>
