@@ -1,58 +1,21 @@
 <script setup lang="ts">
-const activeSection = ref<string>()
+import type { NavigationMenuItem } from '@nuxt/ui'
+import { SECTIONS } from '~/composables/useActiveSection'
 
-// Define the section IDs we want to watch
-const sectionIds = ['about', 'experience', 'skills', 'contact']
-
-// Observe/update active section when scrolling
-onMounted(() => {
-  sectionIds.forEach((id) => {
-    const el = document.getElementById(id)
-    if (!el) return
-
-    useIntersectionObserver(
-      el,
-      (entries) => {
-        const visible = entries.find(e => e.isIntersecting)
-        if (visible) {
-          activeSection.value = id
-        }
-      },
-      {
-        rootMargin: '-40% 0px -40% 0px',
-        threshold: 0,
-      },
-    )
-  })
-})
+const { t } = useI18n()
+const localePath = useLocalePath()
+const activeSection = useActiveSection()
 
 // Links for <UNavigationMenu>
-const links = computed(() => [
-  {
-    label: 'About',
-    to: '#about',
+const links = computed<NavigationMenuItem[]>(() =>
+  // Ignore HeroSection
+  SECTIONS.slice(1).map(id => ({
+    label: t(`section.${id}`),
+    to: localePath(`/#${id}`),
     exactHash: true,
-    active: activeSection.value === 'about',
-  },
-  {
-    label: 'Experience',
-    to: '#experience',
-    exactHash: true,
-    active: activeSection.value === 'experience',
-  },
-  {
-    label: 'Skills',
-    to: '#skills',
-    exactHash: true,
-    active: activeSection.value === 'skills',
-  },
-  {
-    label: 'Contact Me',
-    to: '#contact',
-    exactHash: true,
-    active: activeSection.value === 'contact',
-  },
-])
+    active: activeSection.value === id,
+  })),
+)
 </script>
 
 <template>
@@ -73,16 +36,20 @@ const links = computed(() => [
     />
 
     <template #right>
-      <UColorModeButton class="">
-        <template #fallback>
-          <UButton
-            loading
-            variant="ghost"
-            color="neutral"
-            class="rounded-full"
-          />
-        </template>
-      </UColorModeButton>
+      <ClientOnly>
+        <LocaleSelect />
+
+        <UColorModeButton class="">
+          <template #fallback>
+            <UButton
+              loading
+              variant="ghost"
+              color="neutral"
+              square
+            />
+          </template>
+        </UColorModeButton>
+      </ClientOnly>
     </template>
 
     <template #body>

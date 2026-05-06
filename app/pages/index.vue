@@ -1,7 +1,24 @@
 <script setup lang="ts">
-const { data: home } = await useAsyncData('home', () =>
-  queryCollection('index').first(),
-)
+import type { Collections } from '@nuxt/content'
+
+const { locale } = useI18n()
+
+// Fetch localized content
+const { data: home } = await useAsyncData(`home-${locale.value}`, async () => {
+  const collection = (`content_${locale.value}`) as keyof Collections
+  const content = queryCollection(collection).first()
+
+  // Default to 'zh' content
+  if (!content && locale.value !== 'zh') {
+    const defaultCollection = 'content_zh' as keyof Collections
+    return await queryCollection(defaultCollection).first()
+  }
+
+  return content
+}, {
+  watch: [locale],
+})
+
 if (!home.value) {
   throw createError({
     status: 404,

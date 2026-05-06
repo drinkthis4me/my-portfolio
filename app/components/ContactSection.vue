@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import type { IndexCollectionItem } from '@nuxt/content'
+import type { ContentEnCollectionItem } from '@nuxt/content'
 
 const props = defineProps<{
-  content: IndexCollectionItem['contact']
+  content: ContentEnCollectionItem['contact']
 }>()
+
+const sectionRef = useTemplateRef('contact')
+useObserveActiveSection(sectionRef, 'contact')
 
 const copied = ref(false)
 
@@ -19,6 +22,7 @@ const copyEmail = () => {
 <template>
   <SectionTemplate
     id="contact"
+    ref="contact"
     class="relative"
   >
     <template #title>

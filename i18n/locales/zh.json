@@ -1,0 +1,16 @@
+{
+  "welcome": "歡迎",
+  "general": {
+
+  },
+  "section": {
+    "about": "關於我",
+    "experience": "工作經驗",
+    "skills": "專業技能",
+    "contact": "聯絡我"
+  },
+  "footer": {
+    "copyright": "汪文正。版權所有。",
+    "viewSourceCode": "查看原始碼"
+  }
+}

@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import type { IndexCollectionItem } from '@nuxt/content'
+import type { ContentEnCollectionItem } from '@nuxt/content'
 
 const props = defineProps<{
-  content: IndexCollectionItem['hero']
+  content: ContentEnCollectionItem['hero']
 }>()
+
+const sectionRef = useTemplateRef('hero')
+useObserveActiveSection(sectionRef, 'hero')
 
 const heroTitle = computed(() => {
   const [primary, ...secondaryParts] = (props.content?.headline ?? '').split('\n')
@@ -17,7 +20,8 @@ const heroTitle = computed(() => {
 
 <template>
   <section
-    id="home"
+    id="hero"
+    ref="hero"
     class="relative min-h-[90vh] flex items-center justify-center py-12 overflow-hidden"
   >
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-primary-500/20 blur-[120px] rounded-full -z-10" />

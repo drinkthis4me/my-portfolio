@@ -1,0 +1,16 @@
+{
+  "welcome": "Welcome",
+  "general": {
+
+  },
+  "section": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "James Wang All Right Reserved.",
+    "viewSourceCode": "View Source Code"
+  }
+}

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <UFooter
     :ui="{
@@ -6,7 +10,7 @@
   >
     <template #left>
       <p class="text-sm">
-        © {{ new Date().getFullYear() }} James Wang. All rights reserved.
+        © {{ new Date().getFullYear() }} {{ t('footer.copyright') }}
       </p>
     </template>
 
@@ -30,7 +34,7 @@
             leadingIcon: 'rounded-full bg-white',
           }"
         >
-          View Source Code
+          {{ t('footer.viewSourceCode') }}
         </UButton>
       </div>
     </template>

@@ -1,0 +1,103 @@
+seo:
+  title: "James Wang - Frontend Developer"
+  description: "Hi! I'm James Wang, a frontend developer based in Taipei, Taiwan. This is my portfolio page, enjoy!"
+hero: 
+  headline: "Hi. I'm James Wang.\nFrontend Developer."
+  subheadline: I build high-performance web applications that convert. Focused on Clean Code, Scalable State, and UX Engineering.
+  cta_primary: Get In Touch
+  logos:
+    title: My tech
+    items:
+      - i-logos-vue
+      - i-logos-nuxt-icon
+      - i-logos-typescript-icon
+      - i-logos-tailwindcss-icon
+      - i-logos-pinia
+      - i-logos-java
+      - i-logos-spring-icon
+      - i-logos-docker-icon
+      - i-logos-postgresql
+      - i-logos-mongodb-icon
+about:
+  title: About Me
+  image: 
+    src: "/images/profile-picture.jpg"
+    alt: Picture of me with a dog
+  description: |
+    Hi! I’m a Frontend Developer based in Taipei, Taiwan. I've immersed myself in the Vue ecosystem since 2023.
+    I’m the person you call when you need to turn a complex Figma file into a snappy, functional Nuxt app that doesn't just look good but actually feels 'right' to use.
+    
+    I’m a big believer in clean code, but I care even more about the person using it. 
+    Whether it's optimizing hydration cycles or just picking the perfect transition, I’m all about those small details that make a digital experience feel premium.
+experience:
+  title: Experience
+  items:
+    - position: Frontend Developer
+      company: 
+        name: Global Payments Taiwan
+        url: https://www.globalpayments.com/
+      date: "Sep 2025 - Mar 2026"
+      description: |
+        Led system migration and integration following the acquisition of EftPay.
+      detail: |
+        My role involved implementing a standardized UI component library to maintain brand consistency across the newly integrated fintech products.
+
+        A key achievement was the implementation of a new Multi-Factor Authentication (MFA) security layer. I engineered the authentication flow to balance high-level security compliance with a frictionless user experience, utilizing modern web standards to protect sensitive financial data.  
+    - position: Frontend Developer
+      company: 
+        name: EftPay (Asia) Limited
+        url: https://www.eftpay.com.hk/en/home/
+      date: "Apr 2023 - Aug 2025"
+      description: |
+        Engineered and maintained a robust Enterprise Resource Planning (ERP) system tailored for large-scale payment management.
+      detail: |
+        I specialized in data visualization, building interactive dashboards that transformed complex transaction logs into actionable merchant insights.
+        
+        Additionally, I managed the integration of multiple third-party payment provider APIs, significantly reducing merchant onboarding time.
+    - position: IT Intern  
+      company: 
+        name: Breakthrough Information Co., Ltd
+        url: https://www.twincn.com/item.aspx?no=82821167
+      date: "Sep 2022 - Mar 2023"
+      description: |
+        PC assembling, direct customer support, and hardware maintenance.
+skills:
+  title: Skills
+  category:
+  - name: "Frontend & UI"
+    description: "Building reactive, accessible interfaces."
+    items:
+      - { name: "Vue 3", icon: "i-logos-vue" }
+      - { name: "Nuxt 3", icon: "i-logos-nuxt-icon" }
+      - { name: "Tailwind CSS", icon: "i-logos-tailwindcss-icon" }
+      - { name: "Headless UI", icon: "i-logos-headlessui-icon" }
+
+  - name: "Logic & API"
+    description: "Managing data and state flow."
+    items:
+      - { name: "TypeScript", icon: "i-logos-typescript-icon" }
+      - { name: "Pinia", icon: "i-logos-pinia" }
+      - { name: "TanStack Query", icon: "i-lucide-rss" }
+      - { name: "Axios", icon: "i-lucide-rss" }
+  - name: "Backend"
+    description: "Handling data, storage, and containerization."
+    items: 
+      - { name: "Spring Boot", icon: "i-logos-spring-icon" }
+      - { name: "PostgreSQL", icon: "i-logos-postgresql" }
+      - { name: "MongoDB", icon: "i-logos-mongodb-icon" }
+      - { name: "Docker", icon: "i-logos-docker-icon" }
+  - name: "Design & Tools"
+    description: "Design systems and dev workflow."
+    items:
+      - { name: "Figma", icon: "i-logos-figma" }
+      - { name: "Git", icon: "i-logos-git-icon" }
+      - { name: "Vite", icon: "i-logos-vitejs" }
+      - { name: "Vitest", icon: "i-logos-vitest" }
+contact:
+  title: "Contact"
+  headline: "Let's Get In Touch"
+  subheadline: "Currently available for interesting projects."
+  email: "jamesoffice.417@email.com"
+  socials:
+    - { name: "GitHub", icon: "i-logos-github-icon", url: "https://github.com/drinkthis4me" }
+    - { name: "LinkedIn", icon: "i-logos-linkedin-icon", url: "https://linkedin.com/" }      

@@ -1,13 +1,19 @@
 <script setup lang="ts">
-import type { IndexCollectionItem } from '@nuxt/content'
+import type { ContentEnCollectionItem } from '@nuxt/content'
 
 defineProps<{
-  content: IndexCollectionItem['skills']
+  content: ContentEnCollectionItem['skills']
 }>()
+
+const sectionRef = useTemplateRef('skills')
+useObserveActiveSection(sectionRef, 'skills')
 </script>
 
 <template>
-  <SectionTemplate id="skills">
+  <SectionTemplate
+    id="skills"
+    ref="skills"
+  >
     <template #title>
       {{ content.title }}
     </template>

@@ -1,0 +1,103 @@
+seo:
+  title: "汪文正 - 前端工程師"
+  description: "Hi! 我是汪文正，住在台北的前端工程師。這是我的個人網站，歡迎光臨。"  
+hero: 
+  headline: "你好。我是汪文正\n前端工程師"
+  subheadline: 致力於打造高效能且具備高轉換率的網頁應用程式。專注於乾淨代碼、可擴充的狀態管理與使用者體驗工程。"
+  cta_primary: "與我聯絡"
+  logos:
+    title: "技術棧"
+    items:
+      - i-logos-vue
+      - i-logos-nuxt-icon
+      - i-logos-typescript-icon
+      - i-logos-tailwindcss-icon
+      - i-logos-pinia
+      - i-logos-java
+      - i-logos-spring-icon
+      - i-logos-docker-icon
+      - i-logos-postgresql
+      - i-logos-mongodb-icon
+about:
+  title: "關於我"
+  image: 
+    src: "/images/profile-picture.jpg"
+    alt: "我與狗狗的合照"
+  description: |
+    你好！我是來自台北的前端工程師。自 2023 年起，我便深耕於 Vue 生態系。
+    如果你需要將複雜的 Figma 設計稿轉化為流暢、實用的 Nuxt 應用程式，不僅要外觀精美，更要擁有極致順暢的「操作體感」，那我就是你正在尋找的人。
+    
+    我非常崇尚乾淨的代碼，但我更在乎實際使用它的「人」。
+    無論是優化 Hydration 渲染週期，還是微調最完美的過場動畫，我都專注於這些能讓數位體驗大幅提升質感的小細節。
+experience:
+  title: "工作經驗"
+  items:
+    - position: "前端工程師"
+      company: 
+        name: "Global Payments Taiwan"
+        url: "https://www.globalpayments.com/"
+      date: "2025年9月 - 2026年3月"
+      description: |
+        在 EftPay 被併購後，主導系統的遷移與前端整合工作。
+      detail: |
+        我的職責包括導入標準化的 UI 元件庫，以確保新整合的 Fintech 產品在品牌視覺上維持高度一致性。
+
+        核心成就為導入全新的多因素驗證（MFA）安全防護機制。我重新設計了驗證流程，在滿足高規格安全合規的同時，兼顧無摩擦的使用者體驗，並利用現代網頁標準保護敏感的金融數據。
+    - position: "前端工程師"
+      company: 
+        name: "EftPay (Asia) Limited"
+        url: "https://www.eftpay.com.hk/en/home/"
+      date: "2023年4月 - 2025年8月"
+      description: |
+        開發並維護專為大規模交易管理設計的企業資源規劃（ERP）系統。
+      detail: |
+        我專注於數據視覺化，構建了多款互動式儀表板，將複雜的交易日誌轉化為使用者可直觀運用的關鍵洞察數據。
+        
+        此外，我成功整合了多個第三方支付渠道的 API，大幅縮短了商戶的註冊開通時間。
+    - position: "IT 實習生"
+      company: 
+        name: "突破資訊有限公司"
+        url: "https://www.twincn.com/item.aspx?no=82821167"
+      date: "2022年9月 - 2023年3月"
+      description: |
+        負責電腦組裝、第一線客戶技術支援以及硬體設備維護。
+skills:
+  title: "專業技能"
+  category:
+    - name: "前端與介面設計"
+      description: "建構具備響應式與無障礙設計的互動介面。"
+      items:
+        - { name: "Vue 3", icon: "i-logos-vue" }
+        - { name: "Nuxt 3", icon: "i-logos-nuxt-icon" }
+        - { name: "Tailwind CSS", icon: "i-logos-tailwindcss-icon" }
+        - { name: "Headless UI", icon: "i-logos-headlessui-icon" }
+
+    - name: "邏輯與 API 整合"
+      description: "管控資料流與全域狀態管理。"
+      items:
+        - { name: "TypeScript", icon: "i-logos-typescript-icon" }
+        - { name: "Pinia", icon: "i-logos-pinia" }
+        - { name: "TanStack Query", icon: "i-lucide-rss" }
+        - { name: "Axios", icon: "i-lucide-rss" }
+    - name: "後端與基礎設施"
+      description: "處理資料儲存、後端開發與容器化部署。"
+      items: 
+        - { name: "Spring Boot", icon: "i-logos-spring-icon" }
+        - { name: "PostgreSQL", icon: "i-logos-postgresql" }
+        - { name: "MongoDB", icon: "i-logos-mongodb-icon" }
+        - { name: "Docker", icon: "i-logos-docker-icon" }
+    - name: "設計與開發工具"
+      description: "維護設計系統與優化開發工作流。"
+      items:
+        - { name: "Figma", icon: "i-logos-figma" }
+        - { name: "Git", icon: "i-logos-git-icon" }
+        - { name: "Vite", icon: "i-logos-vitejs" }
+        - { name: "Vitest", icon: "i-logos-vitest" }
+contact:
+  title: "聯絡我"
+  headline: "與我聯絡"
+  subheadline: "目前開放承接各類有趣且具挑戰性的專案協作。"
+  email: "jamesoffice.417@email.com"
+  socials:
+    - { name: "GitHub", icon: "i-logos-github-icon", url: "https://github.com/drinkthis4me" }
+    - { name: "LinkedIn", icon: "i-logos-linkedin-icon", url: "https://linkedin.com/" }
