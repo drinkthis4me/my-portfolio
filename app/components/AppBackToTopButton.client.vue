@@ -24,7 +24,7 @@ const scrollToTop = () => {
   >
     <div
       v-if="isVisible"
-      class="fixed bottom-8 right-8 z-50"
+      class="fixed bottom-18 right-10 z-50"
     >
       <UButton
         icon="i-lucide-arrow-up"
