@@ -3,6 +3,21 @@
 
 @source "../../../content/**/*";
 
+@theme {
+  --font-sans: "Noto Sans", system-ui, sans-serif;
+}
+
+/* Override for Chinese */
+/* <App /> sets <html lang="zh"> with "useHead()" */
+:lang(zh) {
+  --font-sans: "Noto Sans TC", sans-serif;
+}
+
+:lang(zh) body {
+  line-height: 1.75; /* Slightly taller for better readability */
+  letter-spacing: 0.02em;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 64px; /* Accommodate AppHeader height */
