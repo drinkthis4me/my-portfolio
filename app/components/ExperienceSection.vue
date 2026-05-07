@@ -52,7 +52,6 @@ const { t } = useI18n()
           </p>
 
           <UCollapsible v-if="job.detail && job.detail.length > 0">
-            <!-- This part is always visible -->
             <template #default="{ open }">
               <UButton
                 variant="ghost"
@@ -65,7 +64,6 @@ const { t } = useI18n()
               />
             </template>
 
-            <!-- This part slides down -->
             <template #content>
               <div class="flex flex-col gap-y-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
                 <p

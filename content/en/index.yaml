@@ -2,7 +2,7 @@ seo:
   title: "James Wang - Frontend Developer"
   description: "Hi! I'm James Wang, a frontend developer based in Taipei, Taiwan. This is my portfolio page, enjoy!"
 hero: 
-  headline: "Hi. I'm James Wang.\nFrontend Developer."
+  headline: "Hi. I'm James.\nFrontend Developer."
   subheadline: I build high-performance web applications that convert. Focused on Clean Code, Scalable State, and UX Engineering.
   cta_primary: Get In Touch
   logos:
@@ -24,7 +24,7 @@ about:
     src: "/images/profile-picture.jpg"
     alt: Picture of me with a dog
   description: |
-    Hi! I’m a Frontend Developer based in Taipei, Taiwan. I've immersed myself in the Vue ecosystem since 2023.
+    Hi! I’m James Wang, a Frontend Developer based in Taipei, Taiwan. I've immersed myself in the Vue ecosystem since 2023.
     I’m the person you call when you need to turn a complex Figma file into a snappy, functional Nuxt app that doesn't just look good but actually feels 'right' to use.
     
     I’m a big believer in clean code, but I care even more about the person using it. 

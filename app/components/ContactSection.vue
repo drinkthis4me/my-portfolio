@@ -30,8 +30,6 @@ const copyEmail = () => {
       {{ content.title }}
     </template>
 
-    <!-- <div class="absolute inset-0 z-10 bg-radial from-primary-500 via-transparent to-transparent" /> -->
-    <!-- <div class="absolute inset-0 z-0 bg-radial from-pink-400 from-40% to-fuchsia-700" /> -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 h-75 bg-primary-500/20 blur-[120px] rounded-full -z-5" />
 
     <div class="text-center space-y-12">

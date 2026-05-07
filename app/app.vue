@@ -1,12 +1,13 @@
 <script setup lang="ts">
-// TODO: nuxt ui i18n
-// import * as locales from '@nuxt/ui/locale'
+import { en, zh_tw } from '@nuxt/ui/locale'
 
-// const { locale } = useI18n()
+const { locale } = useI18n()
+
+const appLocale = computed(() => locale.value === 'zh' ? zh_tw : en)
 </script>
 
 <template>
-  <UApp>
+  <UApp :locale="appLocale">
     <AppHeader />
 
     <UMain>
