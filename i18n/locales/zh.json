@@ -12,5 +12,12 @@
   "footer": {
     "copyright": "汪文正。版權所有。",
     "viewSourceCode": "查看原始碼"
+  },
+  "error": {
+    "404title": "頁面未找到",
+    "404message": "您要找的頁面不存在",
+    "500title": "伺服器錯誤",
+    "500message": "發生未預期的錯誤",
+    "backHome": "回到首頁"
   }
 }

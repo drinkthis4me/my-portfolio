@@ -12,5 +12,12 @@
   "footer": {
     "copyright": "James Wang All Right Reserved.",
     "viewSourceCode": "View Source Code"
+  },
+  "error": {
+    "404title": "Page Not Found",
+    "404message": "The page you are looking for does not exist.",
+    "500title": "Server Error",
+    "500message": "An Unexpected Error Occurred",
+    "backHome": "BackToHome"
   }
 }
