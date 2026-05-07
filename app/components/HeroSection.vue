@@ -8,6 +8,8 @@ const props = defineProps<{
 const sectionRef = useTemplateRef('hero')
 useObserveActiveSection(sectionRef, 'hero')
 
+const localePath = useLocalePath()
+
 const heroTitle = computed(() => {
   const [primary, ...secondaryParts] = (props.content?.headline ?? '').split('\n')
 
@@ -41,7 +43,7 @@ const heroTitle = computed(() => {
           size="xl"
           color="primary"
           :label="props.content?.cta_primary"
-          to="#contact"
+          :to="localePath('/#contact')"
           icon="i-lucide-arrow-right"
           trailing
           class="px-8"
