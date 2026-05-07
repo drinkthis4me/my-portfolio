@@ -8,6 +8,7 @@ const props = defineProps<{
 const sectionRef = useTemplateRef('contact')
 useObserveActiveSection(sectionRef, 'contact')
 
+const { t } = useI18n()
 const copied = ref(false)
 
 const copyEmail = () => {
@@ -62,7 +63,7 @@ const copyEmail = () => {
               v-if="copied"
               class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-primary-500 font-bold"
             >
-              Copied to clipboard!
+              {{ t('general.copiedToClipboard') }}
             </span>
           </Transition>
         </div>

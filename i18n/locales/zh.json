@@ -1,7 +1,9 @@
 {
   "welcome": "歡迎",
   "general": {
-
+    "readMore": "閱讀更多",
+    "showLess": "收合",
+    "copiedToClipboard": "已複製到剪貼簿!"
   },
   "section": {
     "about": "關於我",

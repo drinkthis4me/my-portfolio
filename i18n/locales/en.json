@@ -1,7 +1,9 @@
 {
   "welcome": "Welcome",
   "general": {
-
+    "readMore": "Read More",
+    "showLess": "Show Less",
+    "copiedToClipboard": "Copied to clipboard!"
   },
   "section": {
     "about": "About",

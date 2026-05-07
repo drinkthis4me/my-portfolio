@@ -7,6 +7,8 @@ defineProps<{
 
 const sectionRef = useTemplateRef('experience')
 useObserveActiveSection(sectionRef, 'experience')
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -55,7 +57,7 @@ useObserveActiveSection(sectionRef, 'experience')
               <UButton
                 variant="ghost"
                 trailing-icon="i-lucide-chevron-down"
-                :label="open ? 'Show less' : 'Read more'"
+                :label="open ? t('general.showLess') : t('general.readMore')"
                 class="group mt-2 px-0 text-primary-500"
                 :ui="{
                   trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200',
