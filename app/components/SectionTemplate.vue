@@ -1,5 +1,5 @@
 <template>
-  <section class="py-12 sm:py-24 overflow-hidden">
+  <section class="overflow-hidden">
     <UContainer>
       <div class="mb-16">
         <h2 class="text-4xl font-black tracking-tighter">

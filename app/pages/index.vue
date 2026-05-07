@@ -37,12 +37,32 @@ useSeoMeta({
   <div v-if="home">
     <HeroSection :content="home.hero" />
 
-    <AboutSection :content="home.about" />
+    <ScrollReveal>
+      <AboutSection
+        :content="home.about"
+        class="py-8 sm:py-16"
+      />
+    </ScrollReveal>
 
-    <ExperienceSection :content="home.experience" />
+    <ScrollReveal>
+      <ExperienceSection
+        :content="home.experience"
+        class="py-8 sm:py-16"
+      />
+    </ScrollReveal>
 
-    <SkillsSection :content="home.skills" />
+    <ScrollReveal>
+      <SkillsSection
+        :content="home.skills"
+        class="py-8 sm:py-16"
+      />
+    </ScrollReveal>
 
-    <ContactSection :content="home.contact" />
+    <ScrollReveal>
+      <ContactSection
+        :content="home.contact"
+        class="py-8 sm:py-16"
+      />
+    </ScrollReveal>
   </div>
 </template>
