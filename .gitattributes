@@ -1,2 +1,5 @@
 # Force all text files to use LF (Linux) line endings on checkout and commit
 * text eol=lf
+*.png binary
+*.jpg binary
+*.gif binary

@@ -4,7 +4,7 @@ A high-performance, multilingual personal portfolio built with **Nuxt 3**, **Tai
 
 - [Live Demo Link]
 
-![Portfolio Screenshot](.github/assets/screenshot.png)
+![Portfolio Screenshot](doc/assets/screenshot.png)
 
 ## Key Features
 
