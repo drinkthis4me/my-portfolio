@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const appConfig = useAppConfig()
 </script>
 
 <template>
@@ -28,7 +29,7 @@ const { t } = useI18n()
         <UButton
           color="neutral"
           leading-icon="i-logos-github-icon"
-          to="/"
+          :to="appConfig.sourceCodeLink"
           target="_blank"
           :ui="{
             leadingIcon: 'rounded-full bg-white',

@@ -5,4 +5,5 @@ export default defineAppConfig({
       neutral: 'zinc',
     },
   },
+  sourceCodeLink: 'https://github.com/drinkthis4me/my-portfolio',
 })

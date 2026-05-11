@@ -5,6 +5,7 @@ import { SECTIONS } from '~/composables/useActiveSection'
 const { t } = useI18n()
 const localePath = useLocalePath()
 const activeSection = useActiveSection()
+const appConfig = useAppConfig()
 
 // Links for <UNavigationMenu>
 const links = computed<NavigationMenuItem[]>(() =>
@@ -64,7 +65,7 @@ const links = computed<NavigationMenuItem[]>(() =>
           trailing-icon="i-lucide-arrow-up-right"
           color="neutral"
           label="Github"
-          to="/"
+          :to="appConfig.sourceCodeLink"
           target="_blank"
         />
       </div>
