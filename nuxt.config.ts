@@ -21,6 +21,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/en': { prerender: true },
   },
 
   compatibilityDate: '2025-07-15',
