@@ -2,6 +2,8 @@
 import type { Collections } from '@nuxt/content'
 
 const { locale } = useI18n()
+const config = useRuntimeConfig()
+const route = useRoute()
 
 // Fetch localized content
 const { data: home } = await useAsyncData(`home-${locale.value}`, async () => {
@@ -27,9 +29,22 @@ if (!home.value) {
   })
 }
 
-useSeoMeta({
-  title: home.value?.seo.title,
-  description: home.value?.seo.description,
+// Dynamically apply SEO from the fetched YAML
+watchEffect(() => {
+  if (home.value?.seo) {
+    useSeoMeta({
+      title: home.value.seo.title,
+      ogTitle: home.value.seo.title,
+      description: home.value.seo.description,
+      ogDescription: home.value.seo.description,
+      ogUrl: `${config.public.siteUrl}${route.path}`,
+      ogImage: `${config.public.siteUrl}/images/og-image.png`,
+      twitterCard: 'summary_large_image',
+      twitterTitle: home.value.seo.title,
+      twitterDescription: home.value.seo.description,
+      twitterImage: `${config.public.siteUrl}/images/og-image.png`,
+    })
+  }
 })
 </script>
 

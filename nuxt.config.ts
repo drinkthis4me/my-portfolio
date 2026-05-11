@@ -13,6 +13,12 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      siteUrl: 'http://localhost:3000',
+    },
+  },
+
   routeRules: {
     '/': { prerender: true },
   },
