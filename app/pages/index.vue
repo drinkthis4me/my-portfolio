@@ -38,11 +38,11 @@ watchEffect(() => {
       description: home.value.seo.description,
       ogDescription: home.value.seo.description,
       ogUrl: `${config.public.siteUrl}${route.path}`,
-      ogImage: `${config.public.siteUrl}/images/og-image.png`,
+      ogImage: `${config.public.siteUrl}/og-image.png`,
       twitterCard: 'summary_large_image',
       twitterTitle: home.value.seo.title,
       twitterDescription: home.value.seo.description,
-      twitterImage: `${config.public.siteUrl}/images/og-image.png`,
+      twitterImage: `${config.public.siteUrl}/og-image.png`,
     })
   }
 })
