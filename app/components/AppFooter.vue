@@ -10,20 +10,24 @@ const appConfig = useAppConfig()
     }"
   >
     <template #left>
-      <p class="text-sm">
-        © {{ new Date().getFullYear() }} {{ t('footer.copyright') }}
-      </p>
+      <ClientOnly>
+        <p class="text-sm">
+          © {{ new Date().getFullYear() }} {{ t('footer.copyright') }}
+        </p>
+      </ClientOnly>
     </template>
 
     <template #right>
       <div class="flex items-center gap-4">
-        <div class="flex items-center gap-1">
+        <div class="flex flex-wrap items-center gap-1">
           <span>Built with</span>
-          <UIcon
-            name="i-logos-nuxt-icon"
-            class="w-4 h-4"
-          />
-          <span class="font-semibold text-gray-600 dark:text-gray-300">Nuxt UI</span>
+          <div class="flex items-center gap-1">
+            <UIcon
+              name="i-logos-nuxt-icon"
+              class="w-4 h-4"
+            />
+            <span class="font-semibold text-gray-600 dark:text-gray-300">Nuxt UI</span>
+          </div>
         </div>
 
         <UButton

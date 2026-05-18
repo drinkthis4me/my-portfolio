@@ -2,7 +2,7 @@
 
 A high-performance, multilingual personal portfolio built with **Nuxt 3**, **Tailwind CSS**, and **Nuxt Content v3**.
 
-- [Live Demo Link]
+- [**Live Link**](https://james-wang-portfolio.vercel.app)
 
 ![Portfolio Screenshot](doc/assets/screenshot.png)
 
@@ -12,7 +12,12 @@ A high-performance, multilingual personal portfolio built with **Nuxt 3**, **Tai
 -  **Content-Driven:** All portfolio data (About, Experience, Skills) is managed via YAML files in the `/content` directory.
 -  **Smart Scroll Spy:** Type-safe, component-based intersection observers that update the navigation header in real-time.
 -  **Dark Mode:** System-aware theme switching via `@nuxtjs/color-mode`.
--  **Performance:** Optimized images, zero-layout shift, and hybrid rendering.
+- **SEO & Social Metadata:** 
+    - **Dynamic Metadata:** Automated Open Graph and Meta tag generation pulled directly from localized content.
+    - **Absolute URL Resolution:** Intelligent `runtimeConfig` to ensure correct social sharing links across Production and Preview environments.
+- **Performance & Rendering:** 
+    - **Static Site Generation (SSG):** Full prerendering via the Nitro engine for instant Time-to-First-Byte (TTFB).
+    - **Optimized Assets:** Zero-layout shift (CLS) design with lazy-loaded components and optimized image handling.
 
 ## Tech Stack
 

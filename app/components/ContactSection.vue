@@ -43,10 +43,10 @@ const copyEmail = () => {
       </div>
 
       <div class="flex flex-col items-center justify-center space-y-6">
-        <div class="relative flex gap-4">
+        <div class="relative flex flex-col items-center gap-4 max-w-xs sm:max-w-md md:max-w-none mx-auto">
           <a
             :href="`mailto:${content.email}`"
-            class="text-2xl md:text-4xl font-mono font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 transition-colors duration-300"
+            class="text-2xl md:text-4xl font-mono font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 transition-colors duration-300 text-center break-all whitespace-normal block"
           >
             {{ content.email }}
           </a>
@@ -59,7 +59,7 @@ const copyEmail = () => {
           <Transition name="fade">
             <span
               v-if="copied"
-              class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-primary-500 font-bold"
+              class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-primary-500 font-bold w-max text-nowrap"
             >
               {{ t('general.copiedToClipboard') }}
             </span>

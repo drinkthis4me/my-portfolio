@@ -5,10 +5,12 @@ const { locale } = useI18n()
 const config = useRuntimeConfig()
 const route = useRoute()
 
+const contentKey = computed(() => `home-${route.path}`)
+
 // Fetch localized content
-const { data: home } = await useAsyncData(`home-${locale.value}`, async () => {
+const { data: home } = await useAsyncData(contentKey, async () => {
   const collection = (`content_${locale.value}`) as keyof Collections
-  const content = queryCollection(collection).first()
+  const content = await queryCollection(collection).first()
 
   // Default to 'zh' content
   if (!content && locale.value !== 'zh') {
