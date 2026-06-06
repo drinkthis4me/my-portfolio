@@ -36,10 +36,12 @@ useObserveActiveSection(sectionRef, 'about')
           <NuxtImg
             :src="content.image.src"
             :alt="content.image.alt"
+            width="600"
+            height="800"
             format="webp"
             loading="lazy"
-            placeholder
-            class="w-full h-full"
+            :placeholder="[15, 10, 50]"
+            class="w-full aspect-3/4 object-contain"
           />
         </div>
       </div>
