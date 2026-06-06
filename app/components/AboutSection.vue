@@ -40,8 +40,8 @@ useObserveActiveSection(sectionRef, 'about')
             height="800"
             format="webp"
             loading="lazy"
-            :placeholder="[15, 10, 50]"
             class="w-full aspect-3/4 object-contain"
+            data-test="profile-picture"
           />
         </div>
       </div>
