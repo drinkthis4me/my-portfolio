@@ -1,47 +1,39 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const appConfig = useAppConfig()
+
+function scrollToTop() {
+  window.scrollTo(0, 0)
+}
 </script>
 
 <template>
-  <UFooter
-    :ui="{
-      container: 'border-t border-default lg:py-8',
-    }"
-  >
-    <template #left>
+  <footer class="px-6 pb-8 lg:px-8">
+    <div
+      class="mx-auto pt-6 flex items-center justify-between max-w-7xl gap-6 border-t border-neutral-200"
+    >
       <ClientOnly>
-        <p class="text-sm">
-          © {{ new Date().getFullYear() }} {{ t('footer.copyright') }}
+        <p class="text-xs">
+          © {{ new Date().getFullYear() }} James Wang
         </p>
+
+        <template #fallback>
+          <p class="text-xs">
+            © James Wang
+          </p>
+        </template>
       </ClientOnly>
-    </template>
 
-    <template #right>
-      <div class="flex items-center gap-4">
-        <div class="flex flex-wrap items-center gap-1">
-          <span>Built with</span>
-          <div class="flex items-center gap-1">
-            <UIcon
-              name="i-logos-nuxt-icon"
-              class="w-4 h-4"
-            />
-            <span class="font-semibold text-gray-600 dark:text-gray-300">Nuxt UI</span>
-          </div>
-        </div>
+      <button
+        class="group inline-flex items-center gap-2 text-xs text-neutral-400 transition-colors hover:text-black"
+        @click="scrollToTop"
+      >
+        {{ t('footer.backToTop') }}
 
-        <UButton
-          color="neutral"
-          leading-icon="i-logos-github-icon"
-          :to="appConfig.sourceCodeLink"
-          target="_blank"
-          :ui="{
-            leadingIcon: 'rounded-full bg-white',
-          }"
-        >
-          {{ t('footer.viewSourceCode') }}
-        </UButton>
-      </div>
-    </template>
-  </UFooter>
+        <Icon
+          name="lucide:arrow-up"
+          class="size-3 transition-transform duration-300 group-hover:-translate-y-1"
+        />
+      </button>
+    </div>
+  </footer>
 </template>

@@ -1,25 +1,92 @@
 {
-  "welcome": "Welcome",
-  "general": {
-    "readMore": "Read More",
-    "showLess": "Show Less",
-    "copiedToClipboard": "Copied to clipboard!"
+  "seo": {
+    "home": {
+      "title": "front-end developer",
+      "description": "Building seamless digital experiences."
+    },
+    "about": {
+      "title": "About me",
+      "description": "Happy to explore unknown unkowns."
+    },
+    "works": {
+      "title": "Selected Works",
+      "description": "A selection of things I've built."
+    }
   },
-  "section": {
+  "header": {
+    "home": "Home",
     "about": "About",
-    "experience": "Experience",
-    "skills": "Skills",
-    "contact": "Contact"
+    "expertise": "Expertise",
+    "work": "Work",
+    "contact": "Contact",
+    "languageSwitch": "Switch language"
+  },
+  "hero": {
+    "eyebrow": "Front-end developer · Taipei, Taiwan",
+    "title": "Building seamless digital experiences.",
+    "description": "Build seamless digital experiences, one pixel and line of code at a time.",
+    "cta": "Let's build something.",
+    "footnote": "Scroll to explore"
+  },
+  "about": {
+    "label": "About",
+    "title": "I’m a front-end developer based in Taipei, focused on building thoughtful, scalable digital experiences.",
+    "description": "I work primarily with Vue, React, and TypeScript, with a strong focus on architecture, performance, and maintainability.",
+    "moreAboutMe": "More about me"
+  },
+  "expertise": {
+    "label": "Expertise",
+    "items": {
+      "01": {
+        "title": "Frontend Development",
+        "description": "Building responsive, accessible interfaces with a focus on clean architecture and maintainable code."
+      },
+      "02": {
+        "title": "UI & Component Systems",
+        "description": "Designing reusable components and scalable patterns that keep interfaces consistent as products grow."
+      },
+      "03": {
+        "title": "Application Architecture",
+        "description": "Structuring data fetching, state, authentication, and application boundaries around real product requirements."
+      },
+      "04": {
+        "title": "Quality & Performance",
+        "description": "Improving reliability and user experience through testing, type safety, performance, and thoughtful developer experience."
+      }
+    }
+  },
+  "work": {
+    "label": "Selected Works",
+    "title": "A selection of things I've built.",
+    "viewAllWork": "View all work",
+    "allWork": "All work",
+    "caseStudy": "Case Study",
+    "technologies": "Technologies",
+    "projectDetails": "Project details",
+    "exploreMoreWork": "Explore more work"
+  },
+  "allWorks": {
+    "eyebrow": "Selected Work",
+    "title": "A collection of things I’ve built.",
+    "description": "A selection of personal projects I’ve worked on, from building new experiences to improving existing applications.",
+    "projectLabel": "Project",
+    "empty": "No projects to show yet.",
+    "viewProject": "View project"
+  },
+  "contact": {
+    "label": "Contact",
+    "title1": "Let's build {0}",
+    "title2": "something."
   },
   "footer": {
-    "copyright": "James Wang All Right Reserved.",
-    "viewSourceCode": "View Source Code"
+    "backToTop": "Back to top"
   },
   "error": {
-    "404title": "Page Not Found",
+    "404title": "Page Not Found.",
     "404message": "The page you are looking for does not exist.",
-    "500title": "Server Error",
-    "500message": "An Unexpected Error Occurred",
-    "backHome": "BackToHome"
+    "500title": "Something went wrong.",
+    "500message": "An Unexpected Error Occurred. Please try again later.",
+    "backToHome": "Back to home",
+    "footer": "All rights reserved."
   }
 }

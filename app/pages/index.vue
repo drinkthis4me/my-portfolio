@@ -1,85 +1,32 @@
 <script setup lang="ts">
-import type { Collections } from '@nuxt/content'
+const { t } = useI18n()
+const { ogImage } = useOgImage()
 
-const { locale } = useI18n()
-const config = useRuntimeConfig()
-const route = useRoute()
+useSeoMeta({
+  title: () => t('seo.home.title'),
+  description: () => t('seo.home.description'),
 
-const contentKey = computed(() => `home-${route.path}`)
+  ogTitle: () => t('seo.home.title'),
+  ogDescription: () => t('seo.home.description'),
+  ogImage: () => ogImage.value,
 
-// Fetch localized content
-const { data: home } = await useAsyncData(contentKey, async () => {
-  const collection = (`content_${locale.value}`) as keyof Collections
-  const content = await queryCollection(collection).first()
-
-  // Default to 'zh' content
-  if (!content && locale.value !== 'zh') {
-    const defaultCollection = 'content_zh' as keyof Collections
-    return await queryCollection(defaultCollection).first()
-  }
-
-  return content
-}, {
-  watch: [locale],
-})
-
-if (!home.value) {
-  throw createError({
-    status: 404,
-    statusText: 'Page not found',
-    fatal: true,
-  })
-}
-
-// Dynamically apply SEO from the fetched YAML
-watchEffect(() => {
-  if (home.value?.seo) {
-    useSeoMeta({
-      title: home.value.seo.title,
-      ogTitle: home.value.seo.title,
-      description: home.value.seo.description,
-      ogDescription: home.value.seo.description,
-      ogUrl: `${config.public.siteUrl}${route.path}`,
-      ogImage: `${config.public.siteUrl}/og-image.png`,
-      twitterCard: 'summary_large_image',
-      twitterTitle: home.value.seo.title,
-      twitterDescription: home.value.seo.description,
-      twitterImage: `${config.public.siteUrl}/og-image.png`,
-    })
-  }
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => t('seo.home.title'),
+  twitterDescription: () => t('seo.home.description'),
+  twitterImage: () => ogImage.value,
 })
 </script>
 
 <template>
-  <div v-if="home">
-    <HeroSection :content="home.hero" />
+  <div>
+    <HeroSection />
 
-    <ScrollReveal>
-      <AboutSection
-        :content="home.about"
-        class="py-8 sm:py-16"
-      />
-    </ScrollReveal>
+    <AboutSection />
 
-    <ScrollReveal>
-      <ExperienceSection
-        :content="home.experience"
-        class="py-8 sm:py-16"
-      />
-    </ScrollReveal>
+    <ExpertiseSection />
 
-    <ScrollReveal>
-      <SkillsSection
-        :content="home.skills"
-        class="py-8 sm:py-16"
-      />
-    </ScrollReveal>
+    <WorkSection />
 
-    <ScrollReveal>
-      <ContactSection
-        :content="home.contact"
-        class="py-8 sm:py-16"
-      />
-    </ScrollReveal>
+    <ContactSection />
   </div>
 </template>

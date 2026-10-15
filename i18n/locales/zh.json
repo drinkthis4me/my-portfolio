@@ -1,25 +1,92 @@
 {
-  "welcome": "歡迎",
-  "general": {
-    "readMore": "閱讀更多",
-    "showLess": "收合",
-    "copiedToClipboard": "已複製到剪貼簿!"
+  "seo": {
+    "home": {
+      "title": "前端工程師",
+      "description": "打造流暢的數位體驗。"
+    },
+    "about": {
+      "title": "關於我",
+      "description": "樂於探索未知的未知。"
+    },
+    "works": {
+      "title": "我的作品",
+      "description": "一些我個人打造、改進與探索的專案。"
+    }
   },
-  "section": {
+  "header": {
+    "home": "首頁",
     "about": "關於我",
-    "experience": "工作經驗",
-    "skills": "專業技能",
-    "contact": "聯絡我"
+    "expertise": "專業",
+    "work": "作品",
+    "contact": "聯絡",
+    "languageSwitch": "語系切換"
+  },
+  "hero": {
+    "eyebrow": "前端工程師 · 台灣，台北",
+    "title": "打造流暢的數位體驗",
+    "description": "用每一個像素與每一行程式碼，打造流暢的數位體驗。",
+    "cta": "一起寫出好程式。",
+    "footnote": "滑動查看更多"
+  },
+  "about": {
+    "label": "關於我",
+    "title": "我是住在台北的前端工程師。致力於打造完善且可擴展的數位產品。",
+    "description": "我專精於 Vue、React 以及 TypeScript。並且追求良好的系統架構、效能和可維護性。",
+    "moreAboutMe": "更多關於我"
+  },
+  "expertise": {
+    "label": "專業",
+    "items": {
+      "01": {
+        "title": "前端開發",
+        "description": "以清晰且可為回的的架構打造響應式使用介面"
+      },
+      "02": {
+        "title": "UI & 元件系統",
+        "description": "設計可隨著產品成長的重複使用元件"
+      },
+      "03": {
+        "title": "程式架構",
+        "description": "建構資料存取、狀態管理以及權限設定層級"
+      },
+      "04": {
+        "title": "品質 & 效能",
+        "description": "以測試和監控改善系統可靠性以及使用者體驗"
+      }
+    }
+  },
+  "work": {
+    "label": "作品集",
+    "title": "我的一些作品",
+    "viewAllWork": "查看所有作品",
+    "allWork": "所有作品",
+    "caseStudy": "專案介紹",
+    "technologies": "技術",
+    "projectDetails": "專案細節",
+    "exploreMoreWork": "返回所有作品"
+  },
+  "allWorks": {
+    "eyebrow": "作品集",
+    "title": "精心打造的數位體驗。",
+    "description": "一些我個人打造、改進與探索的專案。",
+    "projectLabel": "專案",
+    "empty": "目前沒有可展示的專案。",
+    "viewProject": "查看專案"
+  },
+  "contact": {
+    "label": "聯絡",
+    "title1": "一起寫出{0}",
+    "title2": "好程式"
   },
   "footer": {
-    "copyright": "汪文正。版權所有。",
-    "viewSourceCode": "查看原始碼"
+    "backToTop": "回到首頁"
   },
   "error": {
-    "404title": "頁面未找到",
+    "404title": "找不到頁面",
     "404message": "您要找的頁面不存在",
-    "500title": "伺服器錯誤",
-    "500message": "發生未預期的錯誤",
-    "backHome": "回到首頁"
+    "500title": "發生了錯誤",
+    "500message": "發生未預期的錯誤。請稍後重試。",
+    "backToHome": "回到首頁",
+    "footer": "版權所有"
   }
 }

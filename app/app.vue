@@ -1,34 +1,45 @@
 <script setup lang="ts">
-import { en, zh_tw } from '@nuxt/ui/locale'
+import { MotionConfig } from 'motion-v'
 
-const { locale } = useI18n()
+const i18nHead = useLocaleHead()
 
-const appLocale = computed(() => locale.value === 'zh' ? zh_tw : en)
-const lang = computed(() => appLocale.value.code)
-const dir = computed(() => appLocale.value.dir)
+useHeadSafe(i18nHead)
 
-useHead({
+useHead(() => ({
   htmlAttrs: {
-    lang,
-    dir,
+    lang: i18nHead.value.htmlAttrs?.lang,
   },
-  titleTemplate: title => title ? title : 'James Wang - Frontend Developer',
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
   ],
+}))
+
+useSeoMeta({
+  titleTemplate: '%s | James Wang',
+  description: 'Build seamless digital experiences, one pixel and line of code at a time.',
+  ogType: 'website',
+  ogSiteName: 'James Wang',
+  ogImage: '/og-image.png',
+  twitterCard: 'summary_large_image',
 })
 </script>
 
 <template>
-  <UApp :locale="appLocale">
-    <AppHeader />
+  <div>
+    <MotionConfig
+      reduced-motion="user"
+      :transition="{
+        duration: 0.45,
+        ease: 'easeOut',
+      }"
+    >
+      <AppHeader />
 
-    <UMain>
-      <NuxtPage />
-    </UMain>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
 
-    <AppFooter />
-
-    <AppBackToTopButton />
-  </UApp>
+      <AppFooter />
+    </MotionConfig>
+  </div>
 </template>

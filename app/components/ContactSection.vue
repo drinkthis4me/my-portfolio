@@ -1,97 +1,111 @@
 <script setup lang="ts">
-import type { ContentEnCollectionItem } from '@nuxt/content'
-
-const props = defineProps<{
-  content: ContentEnCollectionItem['contact']
-}>()
-
-const sectionRef = useTemplateRef('contact')
-useObserveActiveSection(sectionRef, 'contact')
+import { motion } from 'motion-v'
+import { revealTransition, inViewOptions } from '~/utils/motion'
 
 const { t } = useI18n()
-const copied = ref(false)
 
-const copyEmail = () => {
-  navigator.clipboard.writeText(props.content.email)
-  copied.value = true
-  setTimeout(() => {
-    copied.value = false
-  }, 2000)
-}
+const config = useAppConfig()
+
+const email = computed(() => config.email ?? '')
+
+const links = computed(() => [
+  {
+    label: 'LinkedIn',
+    href: config.linkedIn ?? '#',
+    icon: 'lucide:linkedin',
+  },
+  {
+    label: 'GitHub',
+    href: config.github ?? '#',
+    icon: 'lucide:github',
+  },
+])
 </script>
 
 <template>
-  <SectionTemplate
+  <section
     id="contact"
-    ref="contact"
-    class="relative"
+    class="px-6 py-24 lg:px-8 lg:py-40"
   >
-    <template #title>
-      {{ content.title }}
-    </template>
+    <div class="mx-auto max-w-7xl">
+      <div class="border-t border-neutral-200 pt-8">
+        <motion.p
+          :initial="{ opacity: 0, y: 12 }"
+          :while-in-view="{ opacity: 1, y: 0 }"
+          :transition="revealTransition"
+          :in-view-options="inViewOptions"
+          class="text-xs font-medium uppercase tracking-[0.16em] text-neutral-400"
+        >
+          {{ t('contact.label') }}
+        </motion.p>
 
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 h-75 bg-primary-500/20 blur-[120px] rounded-full -z-5" />
+        <motion.div
+          :initial="{ opacity: 0, y: 24 }"
+          :while-in-view="{ opacity: 1, y: 0 }"
+          :transition="{
+            ...revealTransition,
+            delay: 0.1,
+          }"
+          :in-view-options="inViewOptions"
+          class="mt-16 max-w-5xl"
+        >
+          <i18n-t
+            keypath="contact.title1"
+            tag="h2"
+            for="contact.title2"
+            class="text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.9] tracking-[-0.06em]"
+          >
+            <span class="text-neutral-400">{{ t('contact.title2') }}</span>
+          </i18n-t>
+        </motion.div>
 
-    <div class="text-center space-y-12">
-      <div class="space-y-4">
-        <h2 class="text-2xl md:text-4xl font-black tracking-tighter">
-          {{ content.headline }}
-        </h2>
-        <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-          {{ content.subheadline }}
-        </p>
-      </div>
-
-      <div class="flex flex-col items-center justify-center space-y-6">
-        <div class="relative flex flex-col items-center gap-4 max-w-xs sm:max-w-md md:max-w-none mx-auto">
+        <motion.div
+          :initial="{ opacity: 0, y: 16 }"
+          :while-in-view="{ opacity: 1, y: 0 }"
+          :transition="{
+            ...revealTransition,
+            delay: 0.25,
+          }"
+          :in-view-options="inViewOptions"
+          class="mt-16 flex flex-col gap-8 border-t border-neutral-200 pt-6 sm:flex-row sm:items-center sm:justify-between"
+        >
           <a
-            :href="`mailto:${content.email}`"
-            class="text-2xl md:text-4xl font-mono font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 transition-colors duration-300 text-center break-all whitespace-normal block"
+            :href="`mailto:${email}`"
+            class="group inline-flex items-center gap-3 text-base font-medium"
           >
-            {{ content.email }}
-          </a>
-          <UButton
-            icon="i-lucide-copy"
-            variant="ghost"
-            color="primary"
-            @click.prevent="copyEmail"
-          />
-          <Transition name="fade">
-            <span
-              v-if="copied"
-              class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-primary-500 font-bold w-max text-nowrap"
-            >
-              {{ t('general.copiedToClipboard') }}
-            </span>
-          </Transition>
-        </div>
+            <span>{{ email }}</span>
 
-        <div class="flex gap-8 pt-8">
-          <NuxtLink
-            v-for="social in content.socials"
-            :key="social.name"
-            :to="social.url"
-            target="_blank"
-            class="flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-          >
-            <UIcon
-              :name="social.icon"
-              class="w-6 h-6 dark:bg-white rounded-full"
+            <Icon
+              name="lucide:mail"
+              class="size-4 transition-transform duration-300 group-hover:-translate-y-1"
             />
-            <span class="font-bold tracking-widest text-xs">{{ social.name }}</span>
-          </NuxtLink>
-        </div>
+          </a>
+
+          <nav aria-label="Social links">
+            <ul class="flex items-center gap-6">
+              <li
+                v-for="link in links"
+                :key="link.label"
+              >
+                <NuxtLink
+                  :href="link.href"
+                  external
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors duration-300 hover:text-black"
+                >
+                  <Icon
+                    :name="link.icon"
+                    class="size-4"
+                  />
+
+                  <span>{{ link.label }}</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </nav>
+        </motion.div>
       </div>
     </div>
-  </SectionTemplate>
+  </section>
 </template>
-
-<style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-</style>

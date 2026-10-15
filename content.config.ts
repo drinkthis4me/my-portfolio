@@ -1,84 +1,57 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
-const createIndexSchema = () => {
-  return z.object({
-    seo: z.object({
-      title: z.string(),
-      description: z.string(),
-    }),
+const aboutSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+})
 
-    hero: z.object({
-      title: z.string(),
-      headline: z.string().optional(),
-      subheadline: z.string().optional(),
-      cta_primary: z.string().optional(),
-      logos: z.object({
-        title: z.string().nonempty(),
-        items: z.array(z.string()),
-      }),
-    }),
-
-    about: z.object({
-      title: z.string(),
-      description: z.string(),
-      image: z.object({
-        src: z.string(),
-        alt: z.string(),
-      }),
-    }),
-
-    experience: z.object({
-      title: z.string(),
-      items: z.array(z.object({
-        position: z.string(),
-        company: z.object({
-          name: z.string(),
-          url: z.string(),
-        }),
-        date: z.string(),
-        description: z.string(),
-        detail: z.string().optional(),
-      })),
-    }),
-
-    skills: z.object({
-      title: z.string(),
-      category: z.array(z.object({
-        name: z.string(),
-        description: z.string().optional(),
-        items: z.array(z.object({
-          name: z.string(),
-          icon: z.string(),
-        })),
-      })),
-    }),
-
-    contact: z.object({
-      title: z.string(),
-      headline: z.string(),
-      subheadline: z.string(),
-      email: z.string(),
-      socials: z.array(z.object({
-        name: z.string(),
-        icon: z.string(),
-        url: z.string(),
-      })),
-    }),
-  })
-}
+const workSchema = z.object({
+  slug: z.string(),
+  publishedAt: z.string(), // YYYY-MM-DD
+  title: z.string(),
+  description: z.string(),
+  technologies: z.array(z.string()),
+  image: z.string(),
+  githubLink: z.string(),
+  featured: z.boolean().default(false),
+})
 
 export default defineContentConfig({
   collections: {
-    content_en: defineCollection({
+    about_en: defineCollection({
       type: 'page',
-      source: 'en/**',
-      schema: createIndexSchema(),
+      source: {
+        include: 'en/about/*.md',
+        prefix: '/',
+      },
+      schema: aboutSchema,
     }),
 
-    content_zh: defineCollection({
+    about_zh: defineCollection({
       type: 'page',
-      source: 'zh/**',
-      schema: createIndexSchema(),
+      source: {
+        include: 'zh/about/*.md',
+        prefix: '/',
+      },
+      schema: aboutSchema,
+    }),
+
+    work_en: defineCollection({
+      type: 'page',
+      source: {
+        include: 'en/work/*.md',
+        prefix: '/work',
+      },
+      schema: workSchema,
+    }),
+
+    work_zh: defineCollection({
+      type: 'page',
+      source: {
+        include: 'zh/work/*.md',
+        prefix: '/work',
+      },
+      schema: workSchema,
     }),
   },
 })
